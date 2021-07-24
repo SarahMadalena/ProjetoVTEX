@@ -11,6 +11,7 @@ export default class Home extends Component{
     componentDidMount = async e =>{
 
         const response = await api.get(`/clientes`); 
+        console.log(response);
         
         response.data.map(res=>{
             const {registros} = this.state;
@@ -56,12 +57,12 @@ export default class Home extends Component{
                     <tbody>
                     {registros.map(registro=>(
                         <tr>
-                        <td data-label="Id" ></td>
-                        <td data-label="Nome" ></td>
-                        <td data-label="Idade" ></td>
-                        <td data-label="Email"></td>
-                        <td data-label="Endereço"></td>
-                        <td data-label="Cpf"></td>
+                        <td data-label="id" >{registro.id}</td>
+                        <td data-label="nome" >{registro.nome}</td>
+                        <td data-label="idade" >{registro.idade}</td>
+                        <td data-label="email">{registro.email}</td>
+                        <td data-label="endereco">{registro.endereco}</td>
+                        <td data-label="cpf">{registro.cpf}</td>
                         <td>
                             
                             <Link to={`/edit/${encodeURIComponent(registro.id)}`}>

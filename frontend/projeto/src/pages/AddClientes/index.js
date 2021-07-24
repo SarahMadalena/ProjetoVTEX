@@ -7,13 +7,13 @@ export default class AddClientes extends Component{
         nome:'',
         idade:'',
         email:'',
-        endereço:'',
+        endereco:'',
         cpf:'',
       },
       cad_nome:'',
       cad_idade:'',
       cad_email:'',
-      cad_endereço:'',
+      cad_endereco:'',
       cad_cpf:'',
     };
 
@@ -30,7 +30,7 @@ export default class AddClientes extends Component{
     };
 
     handleEndereçoChange = e =>{
-        this.setState({cad_endereço: e.target.value});
+        this.setState({cad_endereco: e.target.value});
     };
 
     handleCpfChange = e =>{
@@ -38,10 +38,10 @@ export default class AddClientes extends Component{
     };
 
     handleOnSubmit = async e =>{
-      const {cad_nome,cad_idade,cad_email, cad_endereço, cad_cpf} = this.state;  
+      const {cad_nome,cad_idade,cad_email, cad_endereco, cad_cpf} = this.state;  
         e.preventDefault();
 
-        const Cliente = {'nome':cad_nome,'idade':cad_idade,'email':cad_email, 'endereço':cad_endereço, 'cpf':cad_cpf}
+        const Cliente = {'nome':cad_nome,'idade':cad_idade,'email':cad_email, 'endereco':cad_endereco, 'cpf':cad_cpf}
 
         await api.post(`/cliente`,Cliente)
         .then(console.log(Cliente))
@@ -52,7 +52,7 @@ export default class AddClientes extends Component{
 
     render(){
 
-        const {cad_nome,cad_idade,cad_email,cad_endereço,cad_cpf} = this.state;
+        const {cad_nome,cad_idade,cad_email,cad_endereco,cad_cpf} = this.state;
 
         return(
 
@@ -96,7 +96,7 @@ export default class AddClientes extends Component{
                     <input required="required"
                          type="text"
                          placeholder="Digite seu endereço"
-                         value={cad_endereço}
+                         value={cad_endereco}
                         onChange={this.handleEndereçoChange}/>
                   </p>
 

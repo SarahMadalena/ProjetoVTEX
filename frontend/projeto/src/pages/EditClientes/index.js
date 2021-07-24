@@ -8,7 +8,7 @@ export default class EditClientes extends Component{
       cad_nome:'',
       cad_email:'',
       cad_idade:'',
-      cad_endereço:'',
+      cad_endereco:'',
       cad_cpf:'',
     };
 
@@ -20,7 +20,7 @@ export default class EditClientes extends Component{
         cad_nome:response.data.nome,
         cad_idade:response.data.idade,
         cad_email:response.data.email,
-        cad_endereço:response.data.endereço,
+        cad_endereco:response.data.endereco,
         cad_cpf:response.data.cpf,
       });
     
@@ -41,7 +41,7 @@ export default class EditClientes extends Component{
     };
 
     handleEndereçoChange = e =>{
-        this.setState({cad_endereço: e.target.value});
+        this.setState({cad_endereco: e.target.value});
     };
 
     handleCpfChange = e =>{
@@ -49,11 +49,11 @@ export default class EditClientes extends Component{
     };
   
     handleOnSubmit = async e =>{
-      const {id,cad_nome,cad_idade ,cad_email, cad_endereço, cad_cpf} = this.state; 
+      const {id,cad_nome,cad_idade ,cad_email, cad_endereco, cad_cpf} = this.state; 
 
        e.preventDefault();
   
-       const Cliente = {'id': Number(id),'nome':cad_nome,'idade':cad_idade,'email':cad_email, 'endereço':cad_endereço, 'cpf':cad_cpf}
+       const Cliente = {'id': Number(id),'nome':cad_nome,'idade':cad_idade,'email':cad_email, 'endereco':cad_endereco, 'cpf':cad_cpf}
   
         await api.put(`/cliente`,Cliente)
         .then(console.log(Cliente));
@@ -63,7 +63,7 @@ export default class EditClientes extends Component{
 
     render(){
 
-      const {id,cad_nome,cad_idade,cad_email, cad_endereço, cad_cpf} = this.state;
+      const {id,cad_nome,cad_idade,cad_email, cad_endereco, cad_cpf} = this.state;
 
         return(
 
@@ -128,7 +128,7 @@ export default class EditClientes extends Component{
                       required="required" 
                       type="text" 
                       placeholder="Digite seu endereço" 
-                      value={cad_endereço}
+                      value={cad_endereco}
                       onChange={this.handleEndereçoChange}
                       /> 
                   </p>
