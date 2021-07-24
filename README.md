@@ -1,2 +1,0 @@
-# ProjetoVTEX
-Página do Projeto
