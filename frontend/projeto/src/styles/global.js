@@ -7,10 +7,11 @@ export default createGlobalStyle`
 *, *:before, *:after { 
   margin:0;
   padding:0;
-  font-family: Arial,sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body{
+  background-color: #acd8aa;
   margin:10px;
 }
 
@@ -32,7 +33,7 @@ a.links{
 
 /* formatando o cabeçalho dos formulários */
 h1{
-  font-size: 48px;
+  font-size: 28px;
   color: #066a75;
   padding: 10px 0;
   font-family: Arial,sans-serif;
@@ -49,6 +50,45 @@ h1:after{
   background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
   background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
 }
+
+h2{
+  font-size: 48px;
+  color: #066a75;
+  padding: 0 0;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+h3{
+  font-size: 38px;
+  color: #066a75;
+  padding: 0 0;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.btn_cadastrar{
+  font-size: 18px;
+  color: #066a75;
+  padding: 10px 0;
+  font-family: Arial,sans-serif;
+  font-weight: thin;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+footer{
+    height: 20px;
+    padding: 15px;
+    text-align: center;
+    background-color:#6663f8;
+    color: #d6f6dd;
+  }
+
 
 p{
   margin-bottom:15px;
@@ -210,6 +250,8 @@ table {
 @media all and (min-width: 768px) {
   table {
     border: 1px solid #eee;
+    border-color: black;
+    background-color: #d8c2ff;
     border-collapse: collapse;
     max-width: 992px;
     text-align: left;
@@ -227,10 +269,9 @@ table {
       font-size: .875em;
       
       tr {
-        border: none;
+        border-color: black;
         display: table-row;
-        
-        &:nth-child(odd) {
+        &:nth-child(odd){
           background: #eee;
         }
         

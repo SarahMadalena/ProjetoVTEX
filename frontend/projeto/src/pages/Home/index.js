@@ -76,7 +76,7 @@ export default class Home extends Component{
                     ))}
                 </tbody>
                 </table>
-                <Link to='/add'>Cadastrar Novo Cliente</Link>
+                <Link class="btn_cadastrar" to='/add'>Cadastrar Novo Cliente</Link>
             </div>
         );
     }

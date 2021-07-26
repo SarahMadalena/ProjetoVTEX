@@ -146,7 +146,9 @@ export default class EditClientes extends Component{
                   </p>
                   
                   <p> 
-                    <input type="submit" /> 
+                    <input type="submit" onClick = {
+                      this.handleOnSubmit }
+                    /> 
                   </p>
                 </form>
               </div>
